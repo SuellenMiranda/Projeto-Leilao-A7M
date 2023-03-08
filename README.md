@@ -206,5 +206,5 @@ Para executar o servidor
 
 <br>
 <br>
-Atualizações 
+Atualizações <br>
 [v] 3/7/2023 (excel online editado)
