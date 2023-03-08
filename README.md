@@ -203,3 +203,6 @@ $app->run();
 Este código cria uma rota /porcentagem que recebe dois parâmetros pela query string: valor e porcentagem. Ele calcula o valor da porcentagem ganho em cima do valor informado e retorna o resultado como um objeto JSON.
 
 Para executar o servidor
+
+## Atualizações 
+[v] 3/7/2023 (excel online editado)
