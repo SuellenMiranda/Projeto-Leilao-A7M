@@ -12,7 +12,7 @@ Um projeto de api para site que calcula o valor que vai receber em cima da porce
 
 [PLANILHA BASE PARA PROJETO_ALUNO EDIÇÃO ONLINE](https://docs.google.com/spreadsheets/d/1gI2Gk0-D_KltLVE2XS8wdqqOF7CqgYjSPBmQ24J_ESQ/edit?usp=sharing)
 <br>
-[PLANILHA BASE PARA PROJETO_ALUNO BAIXAR](https://docs.google.com/spreadsheets/d/1XEvBLwEDWD4G38DiWBr-RY4JdXp5XNr5/edit?usp=share_link&ouid=106682525505356259672&rtpof=true&sd=true)
+[PLANILHA BASE PARA PROJETO_ALUNO EXCEL ONLINE FÍSICO](https://espiritosanto-my.sharepoint.com/:x:/g/personal/suellen_amorim_uvvnet_com_br/EQs-3WBTPAFKohoiZ29eOXABE30IH4HYHgC55BkWBQMNBA?e=CIR2El)
 <br>
 [Link do site](https://suellenmiranda.github.io/Projeto-Leilao-A7M/)
 
