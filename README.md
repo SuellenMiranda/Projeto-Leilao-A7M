@@ -1,14 +1,11 @@
 # Projeto-Leilao-A7M
 Gestão de Projetos 
 <br>
-Um projeto de api para site que calcula o valor que vai receber em cima da porcentagem.
+Um projeto de api para site que calcula o valor que vai receber em cima com porcentagem.
+<br>
 <br>
 
-
-
-<br>
-
-# Links
+## Links
 
 [PLANILHA BASE PARA PROJETO_ALUNO EDIÇÃO ONLINE](https://docs.google.com/spreadsheets/d/1gI2Gk0-D_KltLVE2XS8wdqqOF7CqgYjSPBmQ24J_ESQ/edit?usp=sharing)
 <br>
@@ -18,17 +15,20 @@ Um projeto de api para site que calcula o valor que vai receber em cima da porce
 
 ---
 
-# Exemplo 1
+### Exemplo 1 (PYTHON)
 
 Primeiro, vamos precisar da biblioteca Flask, que é um framework web para Python. Para instalá-lo, você pode usar o pip:
 
+```bash
 bash
-Copy code
 pip install Flask
-Em seguida, vamos criar um arquivo app.py com o seguinte código:
 
-python
-Copy code
+```
+
+Em seguida, vamos criar um arquivo **`app.py`** com o seguinte código:
+
+```python
+
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -42,34 +42,47 @@ def porcentagem():
 
 if __name__ == '__main__':
     app.run()
-Este código cria uma rota /porcentagem que recebe dois parâmetros pela query string: valor e porcentagem. Ele calcula o valor da porcentagem ganho em cima do valor informado e retorna o resultado como um objeto JSON.
+
+```
+
+Este código cria uma rota **`/porcentagem`** que recebe dois parâmetros pela query string: **`valor`** e **`porcentagem`**. Ele calcula o valor da porcentagem ganho em cima do valor informado e retorna o resultado como um objeto JSON.
 
 Para executar a aplicação, basta rodar o seguinte comando no terminal:
 
+```bash
 bash
-Copy code
 python app.py
-Agora, você pode fazer uma requisição para a rota http://localhost:5000/porcentagem passando os parâmetros valor e porcentagem na URL. Por exemplo:
 
+```
+
+Agora, você pode fazer uma requisição para a rota **`http://localhost:5000/porcentagem`** passando os parâmetros **`valor`** e **`porcentagem`** na URL. Por exemplo:
+
+```bash
 bash
-Copy code
 http://localhost:5000/porcentagem?valor=100&porcentagem=10
+
+```
+
 Esta requisição retorna o seguinte objeto JSON:
 
-json
-Copy code
+```json
+jsonCopy code
 {
   "resultado": 10.0
 }
+
+```
+
 Isso significa que um ganho de 10% em cima de um valor de 100 é igual a 10.
 
-como implemento isso em um site
+### Implementação
+
 Para implementar essa API em um site, você pode utilizar JavaScript para fazer uma requisição HTTP para o servidor que hospeda a API e, em seguida, exibir o resultado retornado pela API na página web.
 
 Vou mostrar um exemplo básico de como fazer isso. Primeiro, adicione o seguinte código HTML à sua página:
 
+```html
 html
-Copy code
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,34 +122,39 @@ Copy code
   </script>
 </body>
 </html>
-Este código cria um formulário com dois campos de entrada para o valor e a porcentagem. Quando o botão "Calcular" é clicado, ele chama a função calcularPorcentagem, que faz uma requisição HTTP para a API usando a função fetch. Quando a resposta da API é recebida, o resultado é exibido na página usando o elemento <p> com o ID resultado.
 
-Para este exemplo funcionar, você precisa rodar o servidor que hospeda a API (no caso, o Flask) na mesma máquina e na mesma porta usada na URL da requisição (no caso, http://localhost:5000/porcentagem). Se o servidor estiver em outra máquina ou porta, você precisa ajustar a URL da requisição de acordo.
+```
 
+Este código cria um formulário com dois campos de entrada para o valor e a porcentagem. Quando o botão "Calcular" é clicado, ele chama a função **`calcularPorcentagem`**, que faz uma requisição HTTP para a API usando a função **`fetch`**. Quando a resposta da API é recebida, o resultado é exibido na página usando o elemento **`<p>`** com o ID **`resultado`**.
 
+Para este exemplo funcionar, você precisa rodar o servidor que hospeda a API (no caso, o Flask) na mesma máquina e na mesma porta usada na URL da requisição (no caso, **`http://localhost:5000/porcentagem`**). Se o servidor estiver em outra máquina ou porta, você precisa ajustar a URL da requisição de acordo.
 
+### Exemplo 2 (JavaScript e PHP)
 
-para testes de programação
-tem como fazer essa api em outra linguagem?
-Sim, é possível implementar essa API em outras linguagens além do Python. Eu vou lhe mostrar como implementar essa mesma funcionalidade em duas outras linguagens populares: JavaScript e PHP.
+### **Implementação em JavaScript (Node.js)**
 
-Implementação em JavaScript (Node.js)
 Para criar essa API em JavaScript, usaremos o Node.js e o framework Express. Primeiro, instale o Node.js e o NPM (Node Package Manager) em seu sistema, e em seguida, crie um novo diretório e abra um terminal dentro dele.
 
-Em seguida, execute o comando a seguir para inicializar um novo projeto Node.js e criar um arquivo package.json:
+Em seguida, execute o comando a seguir para inicializar um novo projeto Node.js e criar um arquivo **`package.json`**:
 
+```bash
 bash
-Copy code
 npm init -y
+
+```
+
 Em seguida, instale o Express digitando no terminal:
 
+```bash
 bash
-Copy code
 npm install express
-Crie um arquivo chamado app.js com o seguinte código:
 
-javascript
-Copy code
+```
+
+Crie um arquivo chamado **`app.js`** com o seguinte código:
+
+```jsx
+javascriptCopy code
 const express = require('express')
 const app = express()
 const port = 3000
@@ -152,37 +170,53 @@ app.get('/porcentagem', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`)
 })
-Este código cria uma rota /porcentagem que recebe dois parâmetros pela query string: valor e porcentagem. Ele calcula o valor da porcentagem ganho em cima do valor informado e retorna o resultado como um objeto JSON.
+
+```
+
+Este código cria uma rota **`/porcentagem`** que recebe dois parâmetros pela query string: **`valor`** e **`porcentagem`**. Ele calcula o valor da porcentagem ganho em cima do valor informado e retorna o resultado como um objeto JSON.
 
 Para executar o servidor, basta digitar no terminal:
 
+```bash
 bash
-Copy code
 node app.js
-Agora, você pode fazer uma requisição para a rota http://localhost:3000/porcentagem passando os parâmetros valor e porcentagem na URL. Por exemplo:
 
+```
+
+Agora, você pode fazer uma requisição para a rota **`http://localhost:3000/porcentagem`** passando os parâmetros **`valor`** e **`porcentagem`** na URL. Por exemplo:
+
+```bash
 bash
-Copy code
 http://localhost:3000/porcentagem?valor=100&porcentagem=10
+
+```
+
 Esta requisição retorna o seguinte objeto JSON:
 
+```json
 json
-Copy code
 {
   "resultado": 10
 }
-Implementação em PHP
+
+```
+
+### **Implementação em PHP**
+
 Para criar essa API em PHP, usaremos o framework Slim. Primeiro, certifique-se de que o PHP e o Composer (o gerenciador de pacotes do PHP) estejam instalados em seu sistema. Em seguida, crie um novo diretório e abra um terminal dentro dele.
 
 Execute o seguinte comando para instalar o Slim:
 
+```bash
 bash
-Copy code
 composer require slim/slim "^4.0"
-Em seguida, crie um arquivo chamado index.php com o seguinte código:
 
+```
+
+Em seguida, crie um arquivo chamado **`index.php`** com o seguinte código:
+
+```php
 php
-Copy code
 <?php
 use Slim\Factory\AppFactory;
 
@@ -200,11 +234,19 @@ $app->get('/porcentagem', function ($request, $response, $args) {
 });
 
 $app->run();
-Este código cria uma rota /porcentagem que recebe dois parâmetros pela query string: valor e porcentagem. Ele calcula o valor da porcentagem ganho em cima do valor informado e retorna o resultado como um objeto JSON.
+
+```
+
+Este código cria uma rota **`/porcentagem`** que recebe dois parâmetros pela query string: **`valor`** e **`porcentagem`**. Ele calcula o valor da porcentagem ganho em cima do valor informado e retorna o resultado como um objeto JSON.
 
 Para executar o servidor
 
-<br>
-<br>
-Atualizações <br>
-[v] 3/7/2023 (excel online editado)
+# Atualizações 
+
+- [x] 2/15/2023 (Grupo montado)
+- [x] 2/22/2023 (criação de tudo)
+- [x] 3/1/2023 (excel editado pela 1ª vez)
+- [ ] 3/2/2023 (reuniao marcada - não aconteceu)
+- [x] 3/7/2023 (excel online editado)
+- [x] 3/9/2023 (excel + reuniao)
+- [ ] 3/15/2023 (proxima reuniao - proxima aula)
