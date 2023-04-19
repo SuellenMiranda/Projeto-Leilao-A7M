@@ -1,101 +1,227 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Leilão</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header>
-      <h1>É um Leiláo conpletanemte Comfiàvel!</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Listagem</a></li>
-          <li><a href="#">Cadastro</a></li>
-        </ul>
-      </nav>
-    </header>
-    
-    <main>
-      <section id="leilao">
-        <h2>Leilão</h2>
-        <form>
-          <label for="nome">Nome do item:</label>
-          <input type="text" id="nome" name="nome"><br>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" as="style">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="description" content="Superbid - Leilão online de carro, caminhão, máquina pesada, equipamento industrial, trator e imóvel. Leilão Superbid, na compra e na venda a melhor solução!" />
+<base href="/" />
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer type="8143c3a20a7583a43664f225-text/javascript"></script>
+<title>SuperBid</title>
 
-          <label for="descricao">Descrição:</label>
-          <textarea id="descricao" name="descricao"></textarea><br>
+<script type="8143c3a20a7583a43664f225-text/javascript">
+        window.prerenderReady = false;
+    </script>
 
-          <label for="imagem">Imagem:</label>
-          <input type="file" id="imagem" name="imagem"><br>
+<style>
+        .gtmhidden {
+            display: none;
+            visibility: hidden;
+        }
 
-          <label for="preco">Preço inicial:</label>
-          <input type="number" id="preco" name="preco"><br>
+        #message-yara {
+            display: block;
+            margin-right: -40px;
+            margin-bottom: 60px;
+            padding: 5px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 3px 6px #0000003D;
+        }
 
-          <label for="prazo">Prazo de encerramento:</label>
-          <input type="datetime-local" id="prazo" name="prazo"><br>
+        #message-yara p {
+            font-size: 14px;
+            font-weight: bold;
+            color: #0050a0;
+            padding: 0px 9px;
+        }
 
-          <button type="submit">Cadastrar</button>
-        </form>
-      </section>
-      
-      <section id="listagem">
-        <h2>Listagem</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Descrição</th>
-              <th>Preço atual</th>
-              <th>Prazo restante</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Item 1</td>
-              <td>Descrição do item 1</td>
-              <td>R$ 50,00</td>
-              <td>3 horas</td>
-              <td>
-                <button>Fazer lance</button>
-                <button>Detalhes</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Item 2</td>
-              <td>Descrição do item 2</td>
-              <td>R$ 100,00</td>
-              <td>1 dia</td>
-              <td>
-                <button>Fazer lance</button>
-                <button>Detalhes</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      
-      <section id="cadastro">
-        <h2>Cadastro</h2>
-        <form>
-          <label for="nome-usuario">Nome:</label>
-          <input type="text" id="nome-usuario" name="nome-usuario"><br>
+        #close-message-yara {
+            font-weight: bold;
+            position: relative;
+            top: -32px;
+            right: -130px;
+            font-size: 14px;
+            color: #0050a0;
+        }
 
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email"><br>
+        @media (max-width: 480px) {
+            #message-yara {
+                position: fixed;
+                bottom: 95px;
+                right: 5px;
+                width: 144px;
+                height: 30px;
+                margin: 0px;
+            }
 
-          <label for="senha">Senha:</label>
-          <input type="password" id="senha" name="senha"><br>
 
-          <button type="submit">Cadastrar</button>
-        </form>
-      </section>
-    </main>
-    
-    <footer>
-      <p>&copy; 2023 É um Leiláo conpletanemte Comfiàvel!</p>
-    </footer>
-  </body>
+        }
+
+        @media (max-width: 960px) {
+            #blip-chat-container #blip-chat-open-iframe {
+                bottom: 70px !important;
+            }
+        }
+    </style>
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" type="8143c3a20a7583a43664f225-text/javascript"></script>
+
+<script type="8143c3a20a7583a43664f225-text/javascript">
+        (function () {
+            const { host } = window.location;
+
+            if (host.endsWith("superbid.net")) {
+                let script = document.createElement('script');
+
+                script.type = 'text/javascript';
+                script.src = 'https://d335luupugsy2.cloudfront.net/js/loader-scripts/31bea601-bb73-4088-96a0-62b0545b63e3-loader.js';
+
+                return document.getElementsByTagName('head')[0].appendChild(script);
+            }
+        })();
+    </script>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" type="8143c3a20a7583a43664f225-text/javascript"></script>
+<script type="8143c3a20a7583a43664f225-text/javascript">
+        const isSuperbid = ["prefaststore.superbid.net", "stgwww.superbid.net", "www.superbid.net", "sold.superbid.net", "sold.com.br"].includes(window.location.host);
+        const isJudicial = ["stgwww.canaljudicial.com.br", "beta.canaljudicial.com.br", "www.canaljudicial.com.br"].includes(window.location.host);
+        if (isSuperbid || isJudicial) {
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function () {
+                OneSignal.init({
+                    appId: isSuperbid ? "095269d6-ec95-4d4a-9b12-68ba40e7aec2" : "979b51c3-a21d-4ac4-a0cd-683f4dc111b0"
+                });
+            });
+        }
+    </script>
+
+<script type="8143c3a20a7583a43664f225-text/javascript">
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 2584986, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+<meta name="google-site-verification" content="G6jLVz7IQsMbvLtd2yg5-NZ_U5XaWzvTlGQOUBWuh2k" />
+
+<script src="https://js.gleam.io/oi-lNTA15a9q.js" async="async" type="8143c3a20a7583a43664f225-text/javascript"></script>
+
+<script type="8143c3a20a7583a43664f225-text/javascript" id='vwoCode'>
+        window._vwo_code = window._vwo_code || (function () {
+            var account_id = 680207,
+                version = 1.4,
+                settings_tolerance = 2000,
+                library_tolerance = 2500,
+                use_existing_jquery = false,
+                is_spa = 1,
+                hide_element = 'body',
+                /* DO NOT EDIT BELOW THIS LINE */
+                f = false, d = document, vwoCodeEl = document.querySelector('#vwoCode'), code = { use_existing_jquery: function () { return use_existing_jquery }, library_tolerance: function () { return library_tolerance }, finish: function () { if (!f) { f = true; var e = d.getElementById('_vis_opt_path_hides'); if (e) e.parentNode.removeChild(e) } }, finished: function () { return f }, load: function (e) { var t = d.createElement('script'); t.fetchPriority = 'high'; t.src = e; t.type = 'text/javascript'; t.innerText; t.onerror = function () { _vwo_code.finish() }; d.getElementsByTagName('head')[0].appendChild(t) }, getVersion: function () { return version }, getMatchedCookies: function (e) { var t = []; if (document.cookie) { t = document.cookie.match(e) || [] } return t }, getCombinationCookie: function () { var e = code.getMatchedCookies(/(?:^|;)\s?(_vis_opt_exp_\d+_combi=[^;$]*)/gi); e = e.map(function (e) { try { var t = decodeURIComponent(e); if (!/_vis_opt_exp_\d+_combi=(?:\d+,?)+\s*$/.test(t)) { return '' } return t } catch (e) { return '' } }); var i = []; e.forEach(function (e) { var t = e.match(/([\d,]+)/g); t && i.push(t.join('-')) }); return i.join('|') }, init: function () { window.settings_timer = setTimeout(function () { _vwo_code.finish() }, settings_tolerance); var e = d.createElement('style'), t = hide_element ? hide_element + '{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}' : '', i = d.getElementsByTagName('head')[0]; e.setAttribute('id', '_vis_opt_path_hides'); vwoCodeEl && e.setAttribute('nonce', vwoCodeEl.nonce); e.setAttribute('type', 'text/css'); if (e.styleSheet) e.styleSheet.cssText = t; else e.appendChild(d.createTextNode(t)); i.appendChild(e); var n = this.getCombinationCookie(); this.load('https://dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&f=' + +is_spa + '&vn=' + version + (n ? '&c=' + n : '')); return settings_timer } }; window._vwo_settings_timer = code.init(); return code;
+        }());
+    </script>
+
+<link href="./css/vendor.vendor.97058c1b3c39322134b7.css" rel="stylesheet"><link href="./css/style.97058c1b3c39322134b7.css" rel="stylesheet"><meta name="og:title" content="SuperBid">
+<meta name="og:description" content="Superbid - Leilão online de carro, caminhão, máquina pesada, equipamento industrial, trator e imóvel. Leilão Superbid, na compra e na venda a melhor solução!">
+<meta name="og:image" content="https://static.s4bdigital.net/cms/images/9345a127-7fb5-445b-ba96-67029c380f7e.png">
+</head>
+<body>
+
+<noscript>
+        <iframe class="gtmhidden" src="https://www.googletagmanager.com/ns.html?id=GTM-T6QHS3F" height="21"
+            width="21"></iframe>
+    </noscript>
+
+<div id="root" style="background-color: #ffffff"></div>
+<script src="https://unpkg.com/blip-chat-widget@1.6.*" type="8143c3a20a7583a43664f225-text/javascript"></script>
+<script type="8143c3a20a7583a43664f225-text/javascript">
+        (function () {
+            const { host } = window.location;
+            const appKeyProd = 'c3VwZXJiaWRyb3V0ZXI6YmNjNTdmOTYtODNmZi00NGMwLTkxOWEtM2E2N2Y0ZWEwYThh';
+            const appKeyBeta = 'c3VwZXJiaWRyb3V0ZXJiZXRhOjcwNjNlYzk2LTExYTgtNGNhZS1iYWIzLWQ1OWRkNmU2ZDA0Nw==';
+            const isProd = ['www.superbid.net', "www.canaljudicial.com.br"].includes(host);
+            const isJudicial = ["www.canaljudicial.com.br", "beta.canaljudicial.com.br"].includes(host);
+
+
+            if (window.location && ["www.superbid.net", "prefaststore.superbid.net", "beta.superbid.net", "stgwww.superbid.net", "localhost:4000"].includes(host)) {
+
+                const mobile = window.innerWidth <= 480;
+
+                let element = document.createElement("div");
+                element.setAttribute('id', 'message-yara')
+                let paragraph = document.createElement('p');
+                let span = document.createElement('span');
+                span.setAttribute('id', 'close-message-yara')
+                paragraph.appendChild(document.createTextNode('Olá, eu sou a Yara!'));
+                span.appendChild(document.createTextNode('X'));
+                element.appendChild(paragraph);
+
+
+                window.onload = function () {
+                    setTimeout(() => {
+                        window.prerenderReady = true;
+                    }, 20000);
+
+                    new BlipChat()
+                        .withAppKey(isProd ? appKeyProd : appKeyBeta)
+                        .withButton({ "color": "#f69325", "icon": "assets/yara.svg" })
+                        .withEventHandler(BlipChat.ENTER_EVENT, function () {
+                            if (mobile) {
+                                document.getElementById("root").style.display = "none";
+                            }
+
+                            document.getElementById('message-yara').style.display = "none";
+                        })
+                        .withEventHandler(BlipChat.LEAVE_EVENT, function () {
+                            if (mobile) {
+                                document.getElementById("root").style.display = "block";
+                            }
+
+                            document.getElementById('message-yara').style.display = "block";
+                        })
+                        .withAccount({
+                            extras: {
+                                "origin": isJudicial && 'JUDICIAL'
+                            }
+                        })
+                        .build();
+
+                    if (document.getElementById('blip-chat-container')) {
+                        if (!mobile) {
+                            document.getElementById("blip-chat-container").addEventListener("mouseenter", function () {
+                                document.getElementById('blip-chat-container').appendChild(element);
+                            })
+
+                            document.getElementById("blip-chat-container").addEventListener("mouseleave", function () {
+                                const child = document.getElementById('message-yara');
+                                document.getElementById('blip-chat-container').removeChild(child);
+                            })
+                        }
+                        // else {
+                        //     element.appendChild(span);
+                        //     document.getElementById('blip-chat-container').appendChild(element);
+
+                        //     document.getElementById("close-message-yara").addEventListener("click", function () {
+                        //         const child = document.getElementById('message-yara');
+                        //         document.getElementById('blip-chat-container').removeChild(child);
+                        //     })
+                        // }
+                    }
+                }
+            }
+        })();
+    </script>
+<script type="8143c3a20a7583a43664f225-text/javascript" src="./js/vendor.97058c1b3c39322134b7.js"></script><script type="8143c3a20a7583a43664f225-text/javascript" src="./js/bundle.97058c1b3c39322134b7.js"></script><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="8143c3a20a7583a43664f225-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2b4487d741ca48dcbadcaf954e159fc61680799950996" integrity="sha512-D/jdE0CypeVxFadTejKGTzmwyV10c1pxZk/AqjJuZbaJwGMyNHY3q/mTPWqMUnFACfCTunhZUVcd4cV78dK1pQ==" data-cf-beacon='{"rayId":"7ba10be9cdfa1acd","token":"aed716d213f74346bbd758ae695d8830","version":"2023.3.0","si":100}' crossorigin="anonymous"></script>
+</body>
 </html>
