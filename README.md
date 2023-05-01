@@ -250,3 +250,31 @@ Para executar o servidor
 - [x] 3/7/2023 (excel online editado)
 - [x] 3/9/2023 (excel + reuniao)
 - [ ] 3/15/2023 (proxima reuniao - proxima aula)
+
+
+
+```flask
+flask
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+# Função para obter o valor atual do leilão
+def get_valor_leilao():
+    # Aqui você pode usar uma API ou web scraping para obter o valor atual do leilão
+    valor_atual = 1000  # Exemplo: valor atual do leilão é 1000
+    return valor_atual
+
+# Rota para retornar o valor atual do leilão e o valor calculado de 5%
+@app.route('/leilao')
+def leilao():
+    valor_atual = get_valor_leilao()
+    valor_5_porcento = valor_atual * 0.05
+    return jsonify({
+        'valor_atual': valor_atual,
+        'valor_5_porcento': valor_5_porcento
+    })
+
+if __name__ == '__main__':
+    app.run()
+```
