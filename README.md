@@ -11,7 +11,6 @@ Um projeto de api para site que calcula o valor que vai receber em cima com porc
 <br>
 [PLANILHA BASE PARA PROJETO_ALUNO EXCEL ONLINE FÍSICO](https://espiritosanto-my.sharepoint.com/:x:/g/personal/suellen_amorim_uvvnet_com_br/EQs-3WBTPAFKohoiZ29eOXABE30IH4HYHgC55BkWBQMNBA?e=CIR2El)
 <br>
-[Link do site](https://suellenmiranda.github.io/Projeto-Leilao-A7M/)
 
 ---
 
