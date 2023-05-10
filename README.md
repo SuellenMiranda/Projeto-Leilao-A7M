@@ -248,7 +248,7 @@ Para executar o servidor
 
 
 
-```flask
+```python
 flask
 from flask import Flask, jsonify
 
