@@ -1,145 +1,34 @@
 # Projeto-Leilao-A7M
-Gestão de Projetos 
-<br>
-Um projeto de api para site que calcula o valor que vai receber em cima com porcentagem.
-<br>
-<br>
+Este é um projeto de API para um site que calcula o valor a receber com base em uma porcentagem. A aplicação é desenvolvida em Python com o framework Flask.
 
+## Começando
+Para obter uma cópia deste projeto em sua máquina local, você pode fazer o download ou clonar o repositório do GitHub.
 
-<br>
+## Pré-requisitos
+Antes de prosseguir com a instalação, certifique-se de ter o seguinte software instalado em sua máquina:
 
----
+* Python
+* Flask
 
-### Exemplo 1 (PYTHON)
-
-Primeiro, vamos precisar da biblioteca Flask, que é um framework web para Python. Para instalá-lo, você pode usar o pip:
-
-```bash
-bash
-pip install Flask
+## Exemplo de código
+Aqui está um exemplo de como instalar as dependências do projeto usando o pip:
 
 ```
-
-Em seguida, vamos criar um arquivo **`app.py`** com o seguinte código:
-
-```python
-
-from flask import Flask, request, jsonify
-
-app = Flask(__name__)
-
-@app.route('/porcentagem')
-def porcentagem():
-    valor = float(request.args.get('valor'))
-    porcentagem = float(request.args.get('porcentagem'))
-    resultado = valor * (porcentagem/100)
-    return jsonify({'resultado': resultado})
-
-if __name__ == '__main__':
-    app.run()
-
+pip install -r requirements.txt
+Instalação
+Para instalar o projeto, basta clonar o repositório e executar o seguinte comando:
 ```
 
-Este código cria uma rota **`/porcentagem`** que recebe dois parâmetros pela query string: **`valor`** e **`porcentagem`**. Ele calcula o valor da porcentagem ganho em cima do valor informado e retorna o resultado como um objeto JSON.
-
-Para executar a aplicação, basta rodar o seguinte comando no terminal:
-
-```bash
-bash
+```
 python app.py
-
+A API estará disponível no endereço http://localhost:5000.
 ```
 
-Agora, você pode fazer uma requisição para a rota **`http://localhost:5000/porcentagem`** passando os parâmetros **`valor`** e **`porcentagem`** na URL. Por exemplo:
-
-```bash
-bash
-http://localhost:5000/porcentagem?valor=100&porcentagem=10
-
-```
-
-Esta requisição retorna o seguinte objeto JSON:
-
-```json
-jsonCopy code
-{
-  "resultado": 10.0
-}
-
-```
-
-Isso significa que um ganho de 10% em cima de um valor de 100 é igual a 10.
-
-### Implementação
-
-Para implementar essa API em um site, você pode utilizar JavaScript para fazer uma requisição HTTP para o servidor que hospeda a API e, em seguida, exibir o resultado retornado pela API na página web.
-
-Vou mostrar um exemplo básico de como fazer isso. Primeiro, adicione o seguinte código HTML à sua página:
-
-```html
-html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Calculadora de Porcentagem</title>
-</head>
-<body>
-  <h1>Calculadora de Porcentagem</h1>
-  <form>
-    <label for="valor">Valor:</label>
-    <input type="text" id="valor"><br>
-
-    <label for="porcentagem">Porcentagem:</label>
-    <input type="text" id="porcentagem"><br>
-
-    <button type="button" onclick="calcularPorcentagem()">Calcular</button>
-  </form>
-
-  <p id="resultado"></p>
-
-  <script>
-    function calcularPorcentagem() {
-      const valor = document.getElementById('valor').value;
-      const porcentagem = document.getElementById('porcentagem').value;
-
-      // Fazer requisição HTTP para a API
-      fetch(`http://localhost:5000/porcentagem?valor=${valor}&porcentagem=${porcentagem}`)
-        .then(response => response.json())
-        .then(data => {
-          // Exibir resultado na página
-          document.getElementById('resultado').textContent = `O ganho de ${porcentagem}% em cima de ${valor} é ${data.resultado}.`;
-        })
-        .catch(error => {
-          console.error(error);
-          document.getElementById('resultado').textContent = 'Ocorreu um erro ao calcular o ganho de porcentagem.';
-        });
-    }
-  </script>
-</body>
-</html>
-
-```
-
-Este código cria um formulário com dois campos de entrada para o valor e a porcentagem. Quando o botão "Calcular" é clicado, ele chama a função **`calcularPorcentagem`**, que faz uma requisição HTTP para a API usando a função **`fetch`**. Quando a resposta da API é recebida, o resultado é exibido na página usando o elemento **`<p>`** com o ID **`resultado`**.
-
-Para este exemplo funcionar, você precisa rodar o servidor que hospeda a API (no caso, o Flask) na mesma máquina e na mesma porta usada na URL da requisição (no caso, **`http://localhost:5000/porcentagem`**). Se o servidor estiver em outra máquina ou porta, você precisa ajustar a URL da requisição de acordo.
-
-
-
-# Atualizações 
-
-- [x] 2/15/2023 (Grupo montado)
-- [x] 2/22/2023 (criação de tudo)
-- [x] 3/1/2023 (excel editado pela 1ª vez)
-- [ ] 3/2/2023 (reuniao marcada - não aconteceu)
-- [x] 3/7/2023 (excel online editado)
-- [x] 3/9/2023 (excel + reuniao)
-- [ ] 3/15/2023 (proxima reuniao - proxima aula)
-
-
+## Como funciona
+A API utiliza uma função para obter o valor atual do leilão e, em seguida, calcula o valor correspondente a 5% desse valor. A rota '/leilao' retorna os dois valores em formato JSON.
 
 ```python
-flask
+
 from flask import Flask, jsonify
 
 app = Flask(__name__)
@@ -162,4 +51,47 @@ def leilao():
 
 if __name__ == '__main__':
     app.run()
+    
 ```
+
+## Testes
+Para testar a API, é possível utilizar o código fonte de uma parte necessária e testar a aplicação em funcionamento. Para isso, você pode acessar o servidor privado através do link abaixo, substituindo o {ip} pelo IP atual:
+
+```
+http://{ip}:5500/index.html
+```
+Certifique-se de que a aplicação esteja rodando ao vivo com o VS Code para que seja possível testar a API. É importante destacar que não é necessário implementar uma segurança muito reforçada para o projeto, já que se trata de algo específico para o leiloeiro.
+
+Executando os testes
+Para executar os testes automatizados do projeto, você pode usar o pytest. Basta executar o seguinte comando na raiz do projeto:
+
+```
+pytest
+```
+
+## Atualizações 
+data: mm/dd/yyyy
+
+- [x] 2/15/2023 (Reunião para grupo montado)
+- [x] 2/22/2023 (Reunião para a criação de tudo)
+- [x] 3/1/2023 (Reunião para excel editado pela 1ª vez)
+- [ ] 3/2/2023 (Reunião para reuniao marcada - não aconteceu)
+- [x] 3/7/2023 (Reunião para excel online editado)
+- [x] 3/9/2023 (Reunião para excel)
+- [x] 3/15/2023 (proxima reuniao - proxima aula)
+- [x] 5/02/2023 (Reunião sobre a implementação apó criação da base da api)
+- [x] 5/09/2023 (Reunião sobre os erros que estão acontecendo)
+
+## Contribuidores
+* Davi Amaral
+* Daniel Colodete
+* Luiz Guilherme
+* Samuel Moacyr
+* Suellen Miranda
+
+## Licença
+Este projeto é Privado.
+
+## Agradecimentos
+Gostaríamos de agradecer a todos que ajudaram no desenvolvimento deste projeto.
+
