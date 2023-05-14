@@ -1,0 +1,34 @@
+dentro do head.style (final em cima):
+
+  <!-- essa parte aqui pra baixo -->
+  <script>
+		function calcular() {
+			var valor = document.getElementById("valor_oferta").value;
+			var resultado = valor * 0.05;
+			document.getElementById("resultado").innerHTML = "5% de " + valor + " é " + resultado;
+		}
+
+		window.onload = function() {
+			var valor_oferta = document.getElementsByClassName("valor_oferta")[0].textContent;
+			var valor_numerico = parseFloat(valor_oferta.replace(/[^\d,]/g, '').replace(',', '.'));
+			document.getElementById("valor_oferta").value = valor_numerico;
+			calcular();
+		};
+	</script>
+  <!-- essa parte aqui pra cima -->
+
+logo em baixo na descrição (mais ou menos meio do código):
+
+  <!-- Essa parte aqui pra baixo -->
+  <legend>Descrição</legend>
+  <div class="texto-descricao" align="justify">
+    <div><br><b>Descrição:</b>
+      <p> 5% do valor é do leiloeiro </p>
+      <p> cálculo </p>
+      <input type="number" id="valor_oferta" readonly>
+	    <p id="resultado"></p>
+     </div>
+  </div>
+  <!-- Essa parte pra cima -->
+
+ps: se der certo é só deixar bonito e pronto, se não plano b (terminar a api memo e usar ela copiando mais do codigo para nao precisar usar o original (menos problema pessoal))
