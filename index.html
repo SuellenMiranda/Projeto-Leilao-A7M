@@ -1,0 +1,441 @@
+
+                                        <span class="valor_oferta" id="valor_oferta">R$ 36.110.000,00</span>
+                                        
+
+                   
+                                <div class="box lance_atual">
+                                    <!-- fazer o botao alterar o valor -->
+                                    <div class="maior_lance_plateia">PRESENCIAL</div><span class="link_lance link_lance_ativo" id="valor_oferta"><small>Presencial</small><span>36.110.000,00</span><small>M</small></span><a href="#" class="cancelar excluir_lance" rel="61559">EXCLUIR</a></div>
+                                <div class="box sugestao_lance">
+                                    <div class="maior_lance_plateia">&nbsp;</div><a href="#" class="link_lance" rel="36110001" id="botao_alterar_oferta"><small>Presencial</small><span id="alterar_oferta">36.112.000,00</span></a></div>
+                                <div class="box sugestao_lance">
+                                    <div class="maior_lance_plateia">&nbsp;</div><a href="#" class="link_lance" rel="36110002" id="botao_alterar_oferta_2"><small>Presencial</small><span id="alterar_oferta_2">36.114.000,00</span></a></div>
+                                <div class="box sugestao_lance">
+                                    <div class="maior_lance_plateia">&nbsp;</div><a href="#" class="link_lance" rel="36110003" id="botao_alterar_oferta_3"><small>Presencial</small><span id="alterar_oferta_3">36.116.000,00</span></a></div>
+                                <div class="box sugestao_lance">
+                                    <div class="maior_lance_plateia">&nbsp;</div><a href="#" class="link_lance" rel="36110004" id="botao_alterar_oferta_4"><small>Presencial</small><span id="alterar_oferta_4">36.118.000,00</span></a></div>
+                                <div class="box sugestao_lance">
+                                    <div class="maior_lance_plateia">&nbsp;</div><a href="#" class="link_lance" rel="36110005" id="botao_alterar_oferta_5"><small>Presencial</small><span id="alterar_oferta_5">36.120.000,00</span></a></div>
+                           
+                            <div class="form_envio">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label>Manualmente valor do lance:
+                                                    <input type="text" id="valor_lance" size="20" inputmask="currency" value="">
+                                                    <input type="hidden" value="">
+                                                </label>
+                                                <input type="button" id="but_enviar_lance" value="ENVIAR">
+                                            </td>
+                                            <td width="10" align="right">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        
+                    <!-- painel_lances -->
+
+                    <div id="painel_fechamento" style="display: block;" >
+                        <table border="0">
+                            <tbody>
+                                <tr>
+                                    <td align="center"><a href="#" class="but_vendido" onclick="mostrarPopup()">VENDIDO</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div id="popup-content"></div>
+                    
+                    </div>
+                </div>
+                <!-- dashbord_lance -->
+
+                <!-- lista_lances -->
+            <div id="lista_lances">
+                <table>
+                    <caption><a href="#" class="maximize">Ultimos Lances</a></caption>
+                    <thead>
+                        <tr>
+                            <td width="1">&nbsp;</td>
+                            <td>Usuario</td>
+                            <td>Cidade</td>
+                            <td align="right">Valor Lance</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#" rel="61559" class="excluir_lance">Excluir</a></td>
+                            <td>Presencial</td>
+                            <td></td>
+                            <td align="right"><strong>R$36.110.000,00</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" rel="61558" class="excluir_lance">Excluir</a></td>
+                            <td>Presencial</td>
+                            <td></td>
+                            <td align="right"><strong>R$36.105.000,00</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" rel="61557" class="excluir_lance">Excluir</a></td>
+                            <td>Presencial</td>
+                            <td></td>
+                            <td align="right"><strong>R$36.100.000,00</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" rel="61556" class="excluir_lance">Excluir</a></td>
+                            <td>visitante2</td>
+                            <td>null</td>
+                            <td align="right"><strong>R$36.095.000,00</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" rel="61555" class="excluir_lance">Excluir</a></td>
+                            <td>visitante1</td>
+                            <td>null</td>
+                            <td align="right"><strong>R$36.090.000,00</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- DATA E HORA-->
+    <script>
+        // Função para atualizar a data e hora
+        function updateDateTime() {
+            var now = new Date();
+            var dateTimeElement = document.getElementById("date-time");
+            dateTimeElement.textContent = now.toLocaleString(); // Exibe a data e hora atual no formato local
+
+            // Atualiza a data e hora a cada segundo
+            setTimeout(updateDateTime, 1000);
+        }
+
+        // Chama a função pela primeira vez para iniciar o processo de atualização
+        updateDateTime();
+    </script>
+    
+    <!-- calculo da api  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function calcular() {
+            var valor = document.getElementById("valor_oferta").value;
+            var resultado = valor * 0.05;
+            document.getElementById("resultado").innerHTML =`5% de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)} é ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(resultado)}`;
+        }
+
+        window.onload = function() {
+            var valor_oferta = document.getElementsByClassName("valor_oferta")[0].textContent;
+            var valor_numerico = parseFloat(valor_oferta.replace(/[^\d,]/g, '').replace(',', '.'));
+            document.getElementById("valor_oferta").value = valor_numerico;
+            calcular();
+        };
+    </script>
+    
+    <!-- BOTOES  -->
+
+
+    <script>
+
+      
+        function adicionarLinhaMaiorOferta() {
+        var tabela_lances = document.getElementById("lista_lances").getElementsByTagName("tbody")[0];
+        var maior_oferta = document.getElementById("valor_oferta").innerText;
+
+        var nova_linha = document.createElement("tr");
+        nova_linha.innerHTML = `<td><a href="#" rel="61560" class="excluir_lance">Excluir</a></td>
+                                <td>Presencial</td>
+                                <td></td>
+                                <td align="right"><strong>${maior_oferta}</strong></td>`;
+
+        // Inserir a nova linha no início da tabela
+        tabela_lances.insertBefore(nova_linha, tabela_lances.firstChild);
+        }
+
+
+
+
+		document.getElementById("botao_alterar_oferta").addEventListener("click", function(event) {
+
+            let valor_atual = document.getElementById("valor_oferta").innerText;
+            let novo_valor_atual = valor_atual.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_atual);
+
+
+            const valor_oferta = document.getElementById("alterar_oferta").innerHTML;
+            let novo_valor_oferta = valor_oferta.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_oferta);
+
+            novo_valor_atual = parseFloat(novo_valor_atual);
+            novo_valor_oferta = parseFloat(novo_valor_oferta);
+            let diferenca = novo_valor_oferta - novo_valor_atual ;
+            console.log(diferenca);
+
+            let soma = diferenca + novo_valor_atual;
+            document.getElementById("valor_oferta").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(soma);
+            
+            function calcular() {
+                var valor = document.getElementById("valor_oferta").value;
+                var resultado = valor * 0.05;
+            document.getElementById("resultado").innerHTML = `5% de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)}  é ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(resultado)}`;
+            }
+
+            
+            var valor_oferta_cal = document.getElementsByClassName("valor_oferta")[0].textContent;
+            var valor_numerico = parseFloat(valor_oferta_cal.replace(/[^\d,]/g, '').replace(',', '.'));
+            document.getElementById("valor_oferta").value = valor_numerico;
+            calcular();
+            
+            console.log(soma);
+
+            adicionarLinhaMaiorOferta();
+
+            
+		});
+
+        document.getElementById("botao_alterar_oferta_2").addEventListener("click", function(event) {
+            let valor_atual = document.getElementById("valor_oferta").innerText;
+            let novo_valor_atual = valor_atual.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_atual);
+
+            const valor_oferta = document.getElementById("alterar_oferta_2").innerHTML;
+            let novo_valor_oferta = valor_oferta.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_oferta);
+
+            novo_valor_atual = parseFloat(novo_valor_atual);
+            novo_valor_oferta = parseFloat(novo_valor_oferta);
+            let diferenca = novo_valor_oferta - novo_valor_atual;
+            console.log(diferenca);
+
+            let soma = diferenca + novo_valor_atual;
+            document.getElementById("valor_oferta").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(soma);
+
+            function calcular() {
+                var valor = document.getElementById("valor_oferta").value;
+                var resultado = valor * 0.05;
+                document.getElementById("resultado").innerHTML = `5% de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)} é ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(resultado)}`;
+            }
+
+            var valor_oferta_cal = document.getElementsByClassName("valor_oferta")[0].textContent;
+            var valor_numerico = parseFloat(valor_oferta_cal.replace(/[^\d,]/g, '').replace(',', '.'));
+            document.getElementById("valor_oferta").value = valor_numerico;
+            calcular();
+
+            console.log(soma);
+
+            adicionarLinhaMaiorOferta();
+
+        });
+        
+        document.getElementById("botao_alterar_oferta_3").addEventListener("click", function(event) {
+            let valor_atual = document.getElementById("valor_oferta").innerText;
+            let novo_valor_atual = valor_atual.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_atual);
+
+            const valor_oferta = document.getElementById("alterar_oferta_3").innerHTML;
+            let novo_valor_oferta = valor_oferta.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_oferta);
+
+            novo_valor_atual = parseFloat(novo_valor_atual);
+            novo_valor_oferta = parseFloat(novo_valor_oferta);
+            let diferenca = novo_valor_oferta - novo_valor_atual;
+            console.log(diferenca);
+
+            let soma = diferenca + novo_valor_atual;
+            document.getElementById("valor_oferta").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(soma);
+
+            function calcular() {
+                var valor = document.getElementById("valor_oferta").value;
+                var resultado = valor * 0.05;
+                document.getElementById("resultado").innerHTML = `5% de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)} é ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(resultado)}`;
+            }
+
+            var valor_oferta_cal = document.getElementsByClassName("valor_oferta")[0].textContent;
+            var valor_numerico = parseFloat(valor_oferta_cal.replace(/[^\d,]/g, '').replace(',', '.'));
+            document.getElementById("valor_oferta").value = valor_numerico;
+            calcular();
+
+            console.log(soma);
+
+            adicionarLinhaMaiorOferta();
+
+        });
+
+        document.getElementById("botao_alterar_oferta_4").addEventListener("click", function(event) {
+            let valor_atual = document.getElementById("valor_oferta").innerText;
+            let novo_valor_atual = valor_atual.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_atual);
+
+            const valor_oferta = document.getElementById("alterar_oferta_4").innerHTML;
+            let novo_valor_oferta = valor_oferta.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_oferta);
+
+            novo_valor_atual = parseFloat(novo_valor_atual);
+            novo_valor_oferta = parseFloat(novo_valor_oferta);
+            let diferenca = novo_valor_oferta - novo_valor_atual;
+            console.log(diferenca);
+
+            let soma = diferenca + novo_valor_atual;
+            document.getElementById("valor_oferta").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(soma);
+
+            function calcular() {
+                var valor = document.getElementById("valor_oferta").value;
+                var resultado = valor * 0.05;
+                document.getElementById("resultado").innerHTML = `5% de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)} é ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(resultado)}`;
+            }
+
+            var valor_oferta_cal = document.getElementsByClassName("valor_oferta")[0].textContent;
+            var valor_numerico = parseFloat(valor_oferta_cal.replace(/[^\d,]/g, '').replace(',', '.'));
+            document.getElementById("valor_oferta").value = valor_numerico;
+            calcular();
+
+            console.log(soma);
+
+            adicionarLinhaMaiorOferta();
+            
+            });
+
+        document.getElementById("botao_alterar_oferta_5").addEventListener("click", function(event) {
+            let valor_atual = document.getElementById("valor_oferta").innerText;
+            let novo_valor_atual = valor_atual.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_atual);
+
+            const valor_oferta = document.getElementById("alterar_oferta_5").innerHTML;
+            let novo_valor_oferta = valor_oferta.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_oferta);
+
+            novo_valor_atual = parseFloat(novo_valor_atual);
+            novo_valor_oferta = parseFloat(novo_valor_oferta);
+            let diferenca = novo_valor_oferta - novo_valor_atual;
+            console.log(diferenca);
+
+            let soma = diferenca + novo_valor_atual;
+            document.getElementById("valor_oferta").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(soma);
+
+            function calcular() {
+                var valor = document.getElementById("valor_oferta").value;
+                var resultado = valor * 0.05;
+                document.getElementById("resultado").innerHTML = `5% de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)} é ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(resultado)}`;
+            }
+
+            var valor_oferta_cal = document.getElementsByClassName("valor_oferta")[0].textContent;
+            var valor_numerico = parseFloat(valor_oferta_cal.replace(/[^\d,]/g, '').replace(',', '.'));
+            document.getElementById("valor_oferta").value = valor_numerico;
+            calcular();
+
+            console.log(soma);
+
+            adicionarLinhaMaiorOferta();
+            
+            });
+                
+        document.getElementById("but_enviar_lance").addEventListener("click", function(event) {
+            var valor_lance = document.getElementById("valor_lance").value;
+            var valor_atual = document.getElementById("valor_oferta").innerText;
+            var novo_valor_atual = valor_atual.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_atual);
+
+            var novo_valor_lance = valor_lance.replace(/[^\d,-]/g, "");
+            console.log(novo_valor_lance);
+
+            novo_valor_atual = parseFloat(novo_valor_atual);
+            novo_valor_lance = parseFloat(novo_valor_lance);
+            var diferenca = novo_valor_lance - novo_valor_atual;
+            console.log(diferenca);
+
+            var soma = diferenca + novo_valor_atual;
+            document.getElementById("valor_oferta").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(soma);
+
+            function calcular() {
+                var valor = document.getElementById("valor_oferta").value;
+                var resultado = valor * 0.05;
+                document.getElementById("resultado").innerHTML = `5% de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)} é ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(resultado)}`;
+            }
+
+            var valor_oferta_cal = document.getElementsByClassName("valor_oferta")[0].textContent;
+            var valor_numerico = parseFloat(valor_oferta_cal.replace(/[^\d,]/g, '').replace(',', '.'));
+            document.getElementById("valor_oferta").value = valor_numerico;
+            calcular();
+
+            console.log(soma);
+
+            document.getElementById("valor_lance").value = "";
+            
+            // Atualizar a lista de últimos lances com a maior oferta
+            var tabela_lances = document.getElementById("lista_lances").getElementsByTagName("tbody")[0];
+            var maior_oferta = document.getElementById("valor_oferta").innerText;
+
+            var nova_linha = document.createElement("tr");
+            nova_linha.innerHTML = `<td><a href="#" rel="61560" class="excluir_lance">Excluir</a></td>
+                                    <td>Presencial</td>
+                                    <td></td>
+                                    <td align="right"><strong>${maior_oferta}</strong></td>`;
+
+            tabela_lances.insertBefore(nova_linha, tabela_lances.firstChild);
+    });
+
+
+	</script>   
+
+    <script>
+        document.getElementById("enviar_valor").addEventListener("click", function() {
+            var valor = document.getElementById("valor_oferta").innerText;
+            fetch(`/atualizarmaiorlance?valor=${valor}`)
+                .then(response => {
+                // Verificar se a resposta foi bem-sucedida
+                if (response.ok) {
+                    window.location.href = '/encerraleilao';
+                } else {
+                    console.log('Ocorreu um erro ao atualizar o maior lance.');
+                }
+            });
+        });
+    </script>
+
+    
+
+    <script>
+        function mostrarPopup() {
+            // Verificar se o leilão está encerrado
+            var leilaoEncerrado = true; // Defina como `true` ou `false` dependendo da lógica do seu sistema
+
+            if (leilaoEncerrado) {
+                // Exibir o bloqueio de leilão encerrado
+                var bloqueioEncerrado = document.createElement('div');
+                bloqueioEncerrado.id = 'bloqueio_encerrado';
+                bloqueioEncerrado.style.display = 'flex';
+
+                var conteudoBloqueio = document.createElement('div');
+                conteudoBloqueio.innerHTML = `
+                    <div class="bloco-encerrado">
+                        <br>
+                        <br>
+                        <h2>Leilão de Teste Encerrado</h2>
+                        <br>
+                        <br>
+                        <span class="destaque">Lance inicial ➙ R$ 36.000.000,00</span>
+                        <br>
+                        <span class="destaque">Lance final ➙ R$ 500.120.000,00</span>
+                        <br>
+                        <span class="destaque">Despesas ➙ R$ 0,00</span>
+                        <br>
+                        <span class="destaque">Valor da comissão ➙ R$ 25.006.000,00<br/span>
+                        
+                    </div>
+                `;
+
+                bloqueioEncerrado.appendChild(conteudoBloqueio);
+
+                document.getElementById('popup-content').appendChild(bloqueioEncerrado);
+            } else {
+                // Exibir o pop-up
+                var popup = document.createElement('div');
+                popup.id = 'popup';
+                popup.style.display = 'block';
+                popup.textContent = 'Vendido';
+
+                document.getElementById('popup-content').appendChild(popup);
+            }
+        }
+    </script>
+            
